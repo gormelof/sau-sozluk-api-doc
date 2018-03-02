@@ -3,7 +3,7 @@
 Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümantasyona ihtiyaç duydum. Tarayıcımın geliştirici araçlarından takip edebildiğim kadarını dökümante ediyorum. 
 (bkz. [saü sözlük android uygulaması](https://github.com/gormelof/sau-sozluk-android))
 
-## User - Login User (Kullanıcı Giriş)
+## User - Login User (Kullanıcı Girişi)
 
 **Post**
 
