@@ -41,3 +41,34 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
     "message":"hata mesajı"
 }
 ```
+
+## User - Register User (Kullanıcı Kaydı)
+
+**Post**
+
+> /v1/users
+
+**Parametreler**
+
+|Alan            |Tip      |Açıklama                     |
+|----------------|---------|-----------------------------|
+|`email`	     |String   |kullanıcı e-posta adresi     |
+|`password`      |String   |kullanıcı parolası           |
+|`username`      |String   |kullanıcı adı (nick)         |
+
+**Başarılı Sonuç**
+
+```json
+{
+    "success":true
+}
+```
+
+**Başarısız Sonuç**
+
+```json
+{
+    "success":false,
+    "message":"hata mesajı"
+}
+```
