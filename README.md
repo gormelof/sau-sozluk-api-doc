@@ -1,1 +1,3 @@
 # sau-sozluk-api-doc
+
+> Saü sözlüğün android uygulama geliştirme aşamasında ihtiyaç duyulmuştur. Burada dursun belki birinin işine daha yarar. Çok yakında burada...
