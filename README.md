@@ -83,7 +83,6 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 
 ```json
 {
-    {
     "success":true,
     "data":{
         "entry_count":1550,
