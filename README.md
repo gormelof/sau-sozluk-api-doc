@@ -3,7 +3,7 @@
 Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümantasyona ihtiyaç duydum. Tarayıcımın geliştirici araçlarından takip edebildiğim kadarını dökümante ediyorum. 
 (bkz. [saü sözlük android uygulaması](https://github.com/gormelof/sau-sozluk-android))
 
-## Sessions - Login User (Kullanıcı Girişi)
+## Kullanıcı Giriş
 
 **Post**
 
@@ -42,7 +42,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Users - Register User (Kullanıcı Kaydı)
+## Kullanıcı Kayıt
 
 **Post**
 
@@ -73,7 +73,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Users - User Profile (Kullanıcı Profili)
+## Kullanıcı Profil
 
 **Get**
 
@@ -128,7 +128,42 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Random - Random Entries (Ortaya karışık beş entry getirir)
+## Konular
+
+**Get**
+
+> /v1/topics
+
+**Parametreler**
+
+|Alan            |Tip      |Açıklama                                                               |
+|----------------|---------|-----------------------------------------------------------------------|
+|`count`	     |Int      |Konu sayısı (zorunlu değildir, varsayılan olarak 20 tane getirir)      |
+
+**Örnek Başarılı Sonuç**
+
+```json
+{
+    "success": true,
+    "data": {
+        "entries_count": 2,
+        "topics": [
+            {
+                "id": 4007,
+                "slug": "dilsiz-usak",
+                "title": "dilsiz uşak",
+                "count": 1,
+                "updated_at": "2018-03-03T10:23:08.683Z",
+                "created_at": "2018-03-03T10:23:08.683Z",
+                "page": 1
+            }
+        ],
+        "topics_count": 1
+    }
+}
+```
+
+## Ortaya karışık beş entry getir
 
 **Get**
 
@@ -164,17 +199,17 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Topics - Topics (Konular)
+## Konuya ait entryler
 
 **Get**
 
-> /v1/topics
+> /v1/topics/{topic_id}
 
 **Parametreler**
 
-|Alan            |Tip      |Açıklama                                                               |
-|----------------|---------|-----------------------------------------------------------------------|
-|`count`	     |Int      |Konu sayısı (zorunlu değildir, varsayılan olarak 20 tane getirir)      |
+|Alan            |Tip      |Açıklama                                                                          |
+|----------------|---------|----------------------------------------------------------------------------------|
+|`page`	         |Int      |İlgili sayfa (zorunlu değildir, varsayılan olarak sayfa 1 veriler getirilir)      |
 
 **Örnek Başarılı Sonuç**
 
@@ -182,21 +217,128 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 {
     "success": true,
     "data": {
-        "entries_count": 2,
-        "topics": [
+        "entries": [
             {
-                "id": 4007,
-                "slug": "dilsiz-usak",
-                "title": "dilsiz uşak",
-                "count": 1,
-                "updated_at": "2018-03-03T10:23:08.683Z",
-                "created_at": "2018-03-03T10:23:08.683Z",
-                "page": 1
+                "id": 2,
+                "text": "sabancı üniversitesi interaktif sözlüğü. `:yersen`",
+                "created_at": "2017-07-18T19:02:08.321Z",
+                "updated_at": "2018-01-09T20:56:27.302Z",
+                "upvotes_count": 0,
+                "downvotes_count": 0,
+                "user": {
+                    "id": "596e57da7b8775000fc26beb",
+                    "slug": "guguluk",
+                    "username": "guguluk"
+                }
             }
         ],
-        "topics_count": 1
+        "total_page": 6,
+        "slug": "sau-sozluk",
+        "title": "saü sözlük",
+        "locked": false
     }
 }
 ```
 
+## Entry oluştur
 
+**Post**
+
+> /v1/entries
+
+**Başlık (Header)**
+
+|Alan            |Tip      |Açıklama                                        |
+|----------------|---------|------------------------------------------------|
+|`token`	     |String   | kullanıcıya özel oluşturulan ahahtar           |
+
+**Parametreler (Params)**
+
+|Alan            |Tip      |Açıklama                     |
+|----------------|---------|-----------------------------|
+|`text`	         |String   |entry içeriği                |
+|`topic_id`      |Int      |ilgili konu                  |
+
+**Örnek Başarılı Sonuç**
+
+```json
+{
+    "success": true,
+    "data": {
+        "id": 8142
+    }
+}
+```
+
+**Örnek Başarısız Sonuç**
+
+```json
+{
+    "success":false,
+    "message":"hata mesajı"
+}
+```
+
+## Tek bir entry
+
+**Get**
+
+> /v1/entries/{entry_id}
+
+**Örnek Başarılı Sonuç**
+
+```json
+{
+    "success": true,
+    "data": {
+        "id": 8139,
+        "text": "Mimiklerine hayran olduğum [https://youtu.be/gq-WnnT74Fw?t=3145 komedyen]dir. Aynı sahnede korkudan, kardeşi rolündeki (bkz: gülse birsel)'in kucağına oturması beni benden alan bir kare olmuştur.",
+        "upvotes_count": 0,
+        "downvotes_count": 0,
+        "created_at": "2018-03-03T01:59:51.551Z",
+        "updated_at": "2018-03-03T01:59:51.551Z",
+        "user": {
+            "id": "598e2f25539ebb0014f525b3",
+            "username": "wizard of oz",
+            "slug": "wizard-of-oz"
+        },
+        "topic": {
+            "id": 1299,
+            "title": "ata demirer",
+            "slug": "ata-demirer",
+            "created_at": "2017-08-20T14:42:24.478Z",
+            "updated_at": "2018-03-03T01:59:51.565Z"
+        }
+    }
+}
+```
+
+## Entry sil
+
+**Delete**
+
+> /v1/entries/{entry_id}
+
+**Başlık (Header)**
+
+|Alan            |Tip      |Açıklama                                        |
+|----------------|---------|------------------------------------------------|
+|`token`	     |String   | kullanıcıya özel oluşturulan ahahtar           |
+
+
+**Örnek Başarılı Sonuç**
+
+```json
+{
+    "success": true
+}
+```
+
+**Örnek Başarısız Sonuç**
+
+```json
+{
+    "success":false,
+    "message":"hata mesajı"
+}
+```
