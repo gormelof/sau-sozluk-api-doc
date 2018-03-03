@@ -3,7 +3,29 @@
 Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümantasyona ihtiyaç duydum. Tarayıcımın geliştirici araçlarından takip edebildiğim kadarını dökümante ediyorum. 
 (bkz. [saü sözlük android uygulaması](https://github.com/gormelof/sau-sozluk-android))
 
-## Kullanıcı Giriş
+# Başlangıç
+
+Base URL: http://sausozluk.net/service/proxy/api
+
+- [Giriş](#giris)
+
+- [Kayıt](#kayit)
+
+- [Profil](#profil)
+
+- [Konular](#konular)
+
+- [Ortaya Karışık](#ortaya-karisik)
+
+- [Konuya Ait Entry](#konuya-ait-entry)
+
+- [Entry Oluştur](#entry-olustur)
+
+- [Tek Entry](#tek-entry)
+
+- [Entry Sil](#entry-sil)
+
+## Giriş
 
 **Post**
 
@@ -42,7 +64,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Kullanıcı Kayıt
+## Kayıt
 
 **Post**
 
@@ -73,7 +95,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Kullanıcı Profil
+## Profil
 
 **Get**
 
@@ -163,7 +185,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Ortaya karışık beş entry getir
+## Ortaya Karışık
 
 **Get**
 
@@ -199,7 +221,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Konuya ait entryler
+## Konuya Ait Entry
 
 **Get**
 
@@ -279,7 +301,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Tek bir entry
+## Tek Entry
 
 **Get**
 
@@ -313,7 +335,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## Entry sil
+## Entry Sil
 
 **Delete**
 
