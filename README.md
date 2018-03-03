@@ -3,7 +3,7 @@
 Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümantasyona ihtiyaç duydum. Tarayıcımın geliştirici araçlarından takip edebildiğim kadarını dökümante ediyorum. 
 (bkz. [saü sözlük android uygulaması](https://github.com/gormelof/sau-sozluk-android))
 
-## User - Login User (Kullanıcı Girişi)
+## Sessions - Login User (Kullanıcı Girişi)
 
 **Post**
 
@@ -42,7 +42,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## User - Register User (Kullanıcı Kaydı)
+## Users - Register User (Kullanıcı Kaydı)
 
 **Post**
 
@@ -73,9 +73,9 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-## User - User Profile (Kullanıcı Profili)
+## Users - User Profile (Kullanıcı Profili)
 
-**Post**
+**Get**
 
 > /v1/users/profile/{username}
 
@@ -119,14 +119,6 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
                 },
                 "action":"logout",
                 "date":"2018-03-02T09:41:29.060Z"
-            },
-            {
-                "_id":"5a991c4989c136777ff60efd",
-                "data":{
-
-                },
-                "action":"login",
-                "date":"2018-03-02T10:47:25.618Z"
             }
         ],
         "generation":"1",
@@ -136,12 +128,74 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-**Örnek Başarısız Sonuç**
+## Random - Random Entries (Ortaya karışık beş entry getirir)
+
+**Get**
+
+> /v1/topics/i/random
+
+**Örnek Başarılı Sonuç**
 
 ```json
 {
-    "success":false,
-    "message":"hata mesajı"
+    "success": true,
+    "data": [
+        {
+            "entry": {
+                "id": 485,
+                "user": {
+                    "id": "596ef4332f371a000f086e96",
+                    "slug": "hamlet",
+                    "username": "hamlet"
+                },
+                "text": "tebrik de değildir.",
+                "upvotes_count": 2,
+                "downvotes_count": 0,
+                "created_at": "2017-07-19T13:17:12.247Z",
+                "updated_at": "2017-07-24T08:32:07.016Z"
+            },
+            "topic": {
+                "id": 223,
+                "slug": "ersan-kuneri",
+                "title": "erşan kuneri"
+            }
+        }
+    ]
+}
+```
+
+## Topics - Topics (Konular)
+
+**Get**
+
+> /v1/topics
+
+**Parametreler**
+
+|Alan            |Tip      |Açıklama                                                               |
+|----------------|---------|-----------------------------------------------------------------------|
+|`count`	     |Int      |Konu sayısı (zorunlu değildir, varsayılan olarak 20 tane getirir)      |
+
+**Örnek Başarılı Sonuç**
+
+```json
+{
+    "success": true,
+    "data": {
+        "entries_count": 2,
+        "topics": [
+            {
+                "id": 4007,
+                "slug": "dilsiz-usak",
+                "title": "dilsiz uşak",
+                "count": 1,
+                "updated_at": "2018-03-03T10:23:08.683Z",
+                "created_at": "2018-03-03T10:23:08.683Z",
+                "page": 1
+            }
+        ],
+        "topics_count": 1
+    }
 }
 ```
 
