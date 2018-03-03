@@ -7,19 +7,19 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 
 Base URL: http://sausozluk.net/service/proxy/api
 
-- [Giriş](#giris)
+- [Giriş](#giriş)
 
-- [Kayıt](#kayit)
+- [Kayıt](#kayıt)
 
 - [Profil](#profil)
 
 - [Konular](#konular)
 
-- [Ortaya Karışık](#ortaya-karisik)
+- [Ortaya Karışık](#ortaya-karışık)
 
 - [Konuya Ait Entry](#konuya-ait-entry)
 
-- [Entry Oluştur](#entry-olustur)
+- [Entry Oluştur](#entry-oluştur)
 
 - [Tek Entry](#tek-entry)
 
