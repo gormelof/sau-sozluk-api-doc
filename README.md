@@ -9,6 +9,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 
 - [Giriş](#giriş)
 - [Kayıt](#kayıt)
+- [Güvenli Çıkış](#güvenli-çıkış)
 - [Profil](#profil)
 - [Konular](#konular)
 - [Ortaya Karışık](#ortaya-karışık)
@@ -75,6 +76,35 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 ```json
 {
     "success":true
+}
+```
+## Güvenli Çıkış
+
+**Delete**
+
+> /v1/users/exit/{username-slug}
+
+**Başlık (Header)**
+
+|Alan            |Tip      |Açıklama                                        |
+|----------------|---------|------------------------------------------------|
+|`token`	     |String   | kullanıcıya özel oluşturulan ahahtar           |
+
+
+**Örnek Başarılı Sonuç**
+
+```json
+{
+    "success": true
+}
+```
+
+**Örnek Başarısız Sonuç**
+
+```json
+{
+    "success":false,
+    "message":"hata mesajı"
 }
 ```
 
