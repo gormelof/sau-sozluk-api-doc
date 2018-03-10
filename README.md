@@ -78,6 +78,16 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
     "success":true
 }
 ```
+
+**Örnek Başarısız Sonuç**
+
+```json
+{
+    "success":false,
+    "message":"hata mesajı"
+}
+```
+
 ## Güvenli Çıkış
 
 **Delete**
@@ -96,15 +106,6 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 ```json
 {
     "success": true
-}
-```
-
-**Örnek Başarısız Sonuç**
-
-```json
-{
-    "success":false,
-    "message":"hata mesajı"
 }
 ```
 
