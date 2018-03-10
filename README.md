@@ -9,7 +9,7 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 
 - [Giriş](#giriş)
 - [Kayıt](#kayıt)
-- [Güvenli Çıkış](#güvenli-çıkış)
+- [Güvenli Çıkış](#güvenli-Çıkış)
 - [Profil](#profil)
 - [Konular](#konular)
 - [Ortaya Karışık](#ortaya-karışık)
