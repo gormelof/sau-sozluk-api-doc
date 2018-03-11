@@ -8,8 +8,9 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 **Base URL: http://sausozluk.net/service/proxy/api**
 
 - [Giriş](#giriş)
+- [Çıkış](#çıkış)
 - [Kayıt](#kayıt)
-- [Güvenli Çıkış](#güvenli-Çıkış)
+- [Tüm Oturumları Kapat](#tüm-oturumları-kapat)
 - [Profil](#profil)
 - [Konular](#konular)
 - [Ortaya Karışık](#ortaya-karışık)
@@ -17,6 +18,15 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 - [Entry Oluştur](#entry-oluştur)
 - [Tek Entry](#tek-entry)
 - [Entry Sil](#entry-sil)
+
+**Örnek Başarısız Sonuç**
+
+```json
+{
+    "success":false,
+    "message":"hata mesajı"
+}
+```
 
 ## Giriş
 
@@ -48,12 +58,24 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-**Örnek Başarısız Sonuç**
+## Çıkış
+
+**GET**
+
+> /v1/sessions/logout
+
+**Başlık (Header)**
+
+|Alan            |Tip      |Açıklama                                        |
+|----------------|---------|------------------------------------------------|
+|`token`	     |String   | kullanıcıya özel oluşturulan ahahtar           |
+
+
+**Örnek Başarılı Sonuç**
 
 ```json
 {
-    "success":false,
-    "message":"hata mesajı"
+    "success": true
 }
 ```
 
@@ -79,18 +101,9 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-**Örnek Başarısız Sonuç**
+## Tüm Oturumları Kapat
 
-```json
-{
-    "success":false,
-    "message":"hata mesajı"
-}
-```
-
-## Güvenli Çıkış
-
-**Delete**
+**Get**
 
 > /v1/users/exit/{username-slug}
 
@@ -106,15 +119,6 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 ```json
 {
     "success": true
-}
-```
-
-**Örnek Başarısız Sonuç**
-
-```json
-{
-    "success":false,
-    "message":"hata mesajı"
 }
 ```
 
@@ -315,15 +319,6 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 }
 ```
 
-**Örnek Başarısız Sonuç**
-
-```json
-{
-    "success":false,
-    "message":"hata mesajı"
-}
-```
-
 ## Tek Entry
 
 **Get**
@@ -376,14 +371,5 @@ Saü sözlüğün andorid uygulamasını geliştirilirken böyle bir dökümanta
 ```json
 {
     "success": true
-}
-```
-
-**Örnek Başarısız Sonuç**
-
-```json
-{
-    "success":false,
-    "message":"hata mesajı"
 }
 ```
